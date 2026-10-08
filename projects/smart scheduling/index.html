@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Scheduling System | Yeabsra Belay</title>
+
+```
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fas fa-calendar-days"></i>
+        </div>
+        <div>
+            <h2>SmartSchedule</h2>
+            <span>University Management</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-label">MAIN</p>
+
+        <a href="#dashboard" class="nav-item active">
+            <i class="fas fa-chart-pie"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#schedule" class="nav-item">
+            <i class="fas fa-calendar-days"></i>
+            <span>Schedule</span>
+        </a>
+
+        <a href="#courses" class="nav-item">
+            <i class="fas fa-book"></i>
+            <span>Courses</span>
+        </a>
+
+        <a href="#teachers" class="nav-item">
+            <i class="fas fa-chalkboard-user"></i>
+            <span>Teachers</span>
+        </a>
+
+        <a href="#rooms" class="nav-item">
+            <i class="fas fa-building"></i>
+            <span>Rooms</span>
+        </a>
+
+        <p class="nav-label">SYSTEM</p>
+
+        <a href="#" class="nav-item">
+            <i class="fas fa-bell"></i>
+            <span>Notifications</span>
+            <span class="notification-count">3</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <i class="fas fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="user-mini">
+            <div class="avatar">YB</div>
+            <div>
+                <strong>Yeabsra Belay</strong>
+                <span>Administrator</span>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="page-heading">
+            <span>University of Gondar</span>
+            <h1>Smart Scheduling System</h1>
+        </div>
+
+        <div class="topbar-right">
+
+            <button class="icon-btn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="top-user">
+                <div class="avatar">YB</div>
+                <div>
+                    <strong>Yeabsra Belay</strong>
+                    <small>Admin</small>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page-section">
+
+        <div class="welcome">
+            <div>
+                <p class="eyebrow">WELCOME BACK 👋</p>
+                <h2>Good morning, Yeabsra!</h2>
+                <p>Manage your university schedule from one place.</p>
+            </div>
+
+            <button class="generate-btn" id="generateBtn">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                Generate Schedule
+            </button>
+        </div>
+
+
+        <!-- STAT CARDS -->
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div>
+                    <span>Total Courses</span>
+                    <strong>48</strong>
+                    <small>↑ 8% this semester</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <i class="fas fa-chalkboard-user"></i>
+                </div>
+                <div>
+                    <span>Teachers</span>
+                    <strong>32</strong>
+                    <small>↑ 4 new teachers</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <i class="fas fa-door-open"></i>
+                </div>
+                <div>
+                    <span>Available Rooms</span>
+                    <strong>24</strong>
+                    <small>18 currently available</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <i class="fas fa-circle-check"></i>
+                </div>
+                <div>
+                    <span>Schedule Status</span>
+                    <strong>Ready</strong>
+                    <small>Last updated today</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+        <div class="section-header">
+            <div>
+                <h3>Quick Actions</h3>
+                <p>Common scheduling tasks</p>
+            </div>
+        </div>
+
+        <div class="quick-grid">
+
+            <button class="quick-card" onclick="showMessage('Schedule generation started!')">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <div>
+                    <strong>Generate Schedule</strong>
+                    <span>Create an optimized timetable</span>
+                </div>
+                <i class="fas fa-arrow-right arrow"></i>
+            </button>
+
+            <button class="quick-card" onclick="showMessage('Course management opened.')">
+                <i class="fas fa-book-open"></i>
+                <div>
+                    <strong>Manage Courses</strong>
+                    <span>Add or update courses</span>
+                </div>
+                <i class="fas fa-arrow-right arrow"></i>
+            </button>
+
+            <button class="quick-card" onclick="showMessage('Room management opened.')">
+                <i class="fas fa-building"></i>
+                <div>
+                    <strong>Manage Rooms</strong>
+                    <span>View room availability</span>
+                </div>
+                <i class="fas fa-arrow-right arrow"></i>
+            </button>
+
+        </div>
+
+
+        <!-- RECENT ACTIVITY -->
+        <div class="content-grid">
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Recent Activity</h3>
+                        <p>Latest scheduling updates</p>
+                    </div>
+
+                    <button class="text-btn">View All</button>
+                </div>
+
+                <div class="activity-list">
+
+                    <div class="activity">
+                        <div class="activity-icon green">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <strong>Schedule approved</strong>
+                            <span>Computer Science Department</span>
+                        </div>
+                        <time>10 min ago</time>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-icon blue">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div>
+                            <strong>New course added</strong>
+                            <span>Software Engineering II</span>
+                        </div>
+                        <time>35 min ago</time>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-icon orange">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <div>
+                            <strong>Room updated</strong>
+                            <span>Programming Lab — 40 seats</span>
+                        </div>
+                        <time>1 hr ago</time>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Schedule Overview</h3>
+                        <p>Current semester</p>
+                    </div>
+                </div>
+
+                <div class="overview-item">
+                    <div class="overview-top">
+                        <span>Schedules Created</span>
+                        <strong>92%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width:92%"></span>
+                    </div>
+                </div>
+
+                <div class="overview-item">
+                    <div class="overview-top">
+                        <span>Teacher Preferences</span>
+                        <strong>76%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width:76%"></span>
+                    </div>
+                </div>
+
+                <div class="overview-item">
+                    <div class="overview-top">
+                        <span>Room Allocation</span>
+                        <strong>88%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width:88%"></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="page-section hidden-section">
+
+        <div class="section-page-heading">
+            <div>
+                <p class="eyebrow">TIMETABLE</p>
+                <h2>Weekly Schedule</h2>
+                <p>Computer Science Department · Semester 2</p>
+            </div>
+
+            <button class="generate-btn" onclick="showMessage('Schedule regenerated successfully!')">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                Regenerate
+            </button>
+        </div>
+
+        <div class="schedule-panel">
+
+            <div class="schedule-toolbar">
+                <button class="date-btn active">Week 1</button>
+                <button class="date-btn">Week 2</button>
+                <button class="date-btn">Week 3</button>
+                <button class="date-btn">Week 4</button>
+            </div>
+
+            <div class="timetable">
+
+                <div class="time-column">
+                    <div></div>
+                    <span>8:00</span>
+                    <span>10:00</span>
+                    <span>12:00</span>
+                    <span>2:00</span>
+                    <span>4:00</span>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-title">Monday</div>
+                    <div class="class-box blue-class">
+                        <strong>Web Development</strong>
+                        <span>Room 204 · 8:00</span>
+                    </div>
+                    <div class="class-box purple-class">
+                        <strong>Database Systems</strong>
+                        <span>Lab 2 · 12:00</span>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-title">Tuesday</div>
+                    <div class="class-box green-class">
+                        <strong>Software Engineering</strong>
+                        <span>Room 301 · 10:00</span>
+                    </div>
+                    <div class="class-box orange-class">
+                        <strong>Computer Networks</strong>
+                        <span>Room 204 · 2:00</span>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-title">Wednesday</div>
+                    <div class="class-box blue-class">
+                        <strong>Artificial Intelligence</strong>
+                        <span>Room 201 · 8:00</span>
+                    </div>
+                    <div class="class-box green-class">
+                        <strong>Programming Lab</strong>
+                        <span>Lab 1 · 2:00</span>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-title">Thursday</div>
+                    <div class="class-box purple-class">
+                        <strong>Database Systems</strong>
+                        <span>Room 204 · 10:00</span>
+                    </div>
+                    <div class="class-box blue-class">
+                        <strong>Web Development</strong>
+                        <span>Lab 2 · 2:00</span>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-title">Friday</div>
+                    <div class="class-box orange-class">
+                        <strong>Project Management</strong>
+                        <span>Room 301 · 8:00</span>
+                    </div>
+                    <div class="class-box green-class">
+                        <strong>Software Engineering</strong>
+                        <span>Room 201 · 12:00</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COURSES -->
+    <section id="courses" class="page-section hidden-section">
+
+        <div class="section-page-heading">
+            <div>
+                <p class="eyebrow">ACADEMIC DATA</p>
+                <h2>Courses</h2>
+                <p>Manage courses included in the timetable</p>
+            </div>
+
+            <button class="generate-btn" onclick="showMessage('Course added successfully!')">
+                <i class="fas fa-plus"></i>
+                Add Course
+            </button>
+        </div>
+
+        <div class="table-panel">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Code</th>
+                        <th>Teacher</th>
+                        <th>Credit</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><strong>Web Development</strong></td>
+                        <td>CS401</td>
+                        <td>Dr. Daniel</td>
+                        <td>3</td>
+                        <td><span class="status active-status">Active</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Database Systems</strong></td>
+                        <td>CS403</td>
+                        <td>Ms. Hana</td>
+                        <td>3</td>
+                        <td><span class="status active-status">Active</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Artificial Intelligence</strong></td>
+                        <td>CS405</td>
+                        <td>Mr. Samuel</td>
+                        <td>4</td>
+                        <td><span class="status active-status">Active</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Software Engineering</strong></td>
+                        <td>SE402</td>
+                        <td>Dr. Michael</td>
+                        <td>3</td>
+                        <td><span class="status active-status">Active</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEACHERS -->
+    <section id="teachers" class="page-section hidden-section">
+
+        <div class="section-page-heading">
+            <div>
+                <p class="eyebrow">STAFF MANAGEMENT</p>
+                <h2>Teachers</h2>
+                <p>View instructors and their scheduling preferences</p>
+            </div>
+        </div>
+
+        <div class="people-grid">
+
+            <div class="person-card">
+                <div class="person-avatar">DD</div>
+                <h3>Dr. Daniel</h3>
+                <p>Software Engineering</p>
+                <span><i class="fas fa-circle"></i> Available</span>
+            </div>
+
+            <div class="person-card">
+                <div class="person-avatar">HM</div>
+                <h3>Ms. Hana</h3>
+                <p>Database Systems</p>
+                <span><i class="fas fa-circle"></i> Available</span>
+            </div>
+
+            <div class="person-card">
+                <div class="person-avatar">SS</div>
+                <h3>Mr. Samuel</h3>
+                <p>Artificial Intelligence</p>
+                <span><i class="fas fa-circle"></i> Available</span>
+            </div>
+
+            <div class="person-card">
+                <div class="person-avatar">MM</div>
+                <h3>Dr. Michael</h3>
+                <p>Web Development</p>
+                <span><i class="fas fa-circle"></i> Available</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ROOMS -->
+    <section id="rooms" class="page-section hidden-section">
+
+        <div class="section-page-heading">
+            <div>
+                <p class="eyebrow">ROOM MANAGEMENT</p>
+                <h2>Rooms</h2>
+                <p>Monitor classrooms and laboratory availability</p>
+            </div>
+        </div>
+
+        <div class="rooms-grid">
+
+            <div class="room-card available">
+                <i class="fas fa-door-open"></i>
+                <div>
+                    <h3>Room 204</h3>
+                    <p>Capacity: 50 students</p>
+                </div>
+                <span>Available</span>
+            </div>
+
+            <div class="room-card occupied">
+                <i class="fas fa-door-closed"></i>
+                <div>
+                    <h3>Room 301</h3>
+                    <p>Capacity: 40 students</p>
+                </div>
+                <span>Occupied</span>
+            </div>
+
+            <div class="room-card available">
+                <i class="fas fa-flask"></i>
+                <div>
+                    <h3>Programming Lab</h3>
+                    <p>Capacity: 40 students</p>
+                </div>
+                <span>Available</span>
+            </div>
+
+            <div class="room-card available">
+                <i class="fas fa-computer"></i>
+                <div>
+                    <h3>Computer Lab 2</h3>
+                    <p>Capacity: 35 students</p>
+                </div>
+                <span>Available</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- TOAST MESSAGE -->
+<div class="toast" id="toast">
+    <i class="fas fa-circle-check"></i>
+    <span id="toastMessage">Success!</span>
+</div>
+
+
+<script src="script.js"></script>
+```
+
+</body>
+</html>
